@@ -18,7 +18,6 @@ export const useCurrencyConversion = (): UseCurrencyConversionReturn => {
         setLoading(true);
         setError(null);
         const data = await fetchCurrencies();
-        console.log("🚀 ~ loadCurrencies ~ data:", data)
 
         const validCurrencies = data.filter(isValidCurrency);
 

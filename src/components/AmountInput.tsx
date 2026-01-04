@@ -1,5 +1,5 @@
 import type { AmountInputProps } from "../types/components";
-import { FormGroup, Label, Input } from "../styles";
+import { Group, Label, Input } from "../styles";
 import { NUMERIC_REGEX } from "../utils/constants";
 
 export const AmountInput = ({
@@ -18,7 +18,7 @@ export const AmountInput = ({
   };
 
   return (
-    <FormGroup>
+    <Group>
       <Label htmlFor={id}>{label}</Label>
       <Input
         id={id}
@@ -31,6 +31,6 @@ export const AmountInput = ({
         placeholder={readOnly ? "" : "0.00"}
         aria-label={readOnly ? "Converted amount (read-only)" : "Amount to convert"}
       />
-    </FormGroup>
+    </Group>
   );
 };

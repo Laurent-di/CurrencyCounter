@@ -15,7 +15,7 @@ export const CurrencyGrid = styled.div`
   margin-bottom: 0;
 `;
 
-export const FormGroup = styled.div`
+export const Group = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -152,7 +152,7 @@ export const FormWrapper = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 `;
 
-export const ErrorCard = styled(FormWrapper)`
+export const ErrorNotification = styled(FormWrapper)`
   border: 2px solid #ff6b6b;
   text-align: center;
 `;

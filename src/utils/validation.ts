@@ -27,14 +27,3 @@ export const isValidObject = (
   );
 };
 
-/**
- * Validates currency conversion parameters
- */
-export const validateConversionParams = (
-  from: string,
-  to: string,
-  amount: number
-): boolean => {
-  return !!(from && to && amount > 0);
-};
-

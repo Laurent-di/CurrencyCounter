@@ -12,7 +12,7 @@ export const ErrorIcon = styled.div`
   font-size: 2rem;
 `;
 
-export const ErrorIconLarge = styled(ErrorIcon)`
+export const LargeIcon = styled(ErrorIcon)`
   width: 80px;
   height: 80px;
   margin: 0 auto 1.5rem;
