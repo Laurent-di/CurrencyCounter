@@ -50,13 +50,6 @@ export const isValidCurrency = (currency: Currency): boolean => {
 };
 
 /**
- * Validates if a currency code is valid (2-5 characters)
- */
-export const isValidCurrencyCode = (code: string): boolean => {
-  return code.length >= 2 && code.length <= 5;
-};
-
-/**
  * Sorts currencies alphabetically by code
  */
 export const sortCurrencies = (currencies: Currency[]): Currency[] => {

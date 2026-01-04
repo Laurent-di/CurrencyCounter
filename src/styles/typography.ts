@@ -35,21 +35,12 @@ export const ErrorTitle = styled.h2`
   font-weight: 700;
 `;
 
-export const ErrorTitleLarge = styled(ErrorTitle)`
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-`;
 
 export const ErrorMessage = styled.p`
   color: #666;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   text-align: center;
-`;
-
-export const ErrorMessageLarge = styled(ErrorMessage)`
-  margin-bottom: 2rem;
-  font-size: 1rem;
 `;
 
 export const LoadingText = styled.p`

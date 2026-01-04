@@ -1,23 +1,19 @@
-import { ErrorCard, ErrorIconLarge, ErrorTitleLarge, ErrorMessageLarge, ReloadButton } from '../styles';
-import { extractErrorMessage } from '../utils/errors';
+import { ErrorNotification, LargeIcon, ReloadButton, ErrorMessage } from '../styles';
 
-type ErrorFallbackProps = {
+export const ErrorFallback = ({ error, resetErrorBoundary }: {
   error: Error;
   resetErrorBoundary: () => void;
-};
-
-export const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps) => {
+}) => {
   return (
-    <ErrorCard>
-      <ErrorIconLarge>⚠️</ErrorIconLarge>
-      <ErrorTitleLarge>Something went wrong</ErrorTitleLarge>
-      <ErrorMessageLarge>
-        {extractErrorMessage(error, 'An unexpected error occurred')}
-      </ErrorMessageLarge>
+    <ErrorNotification>
+      <LargeIcon>⚠️</LargeIcon>
+      <ErrorMessage>
+       {error.message}
+      </ErrorMessage>
       <ReloadButton onClick={resetErrorBoundary}>
         Reload Page
       </ReloadButton>
-    </ErrorCard>
+    </ErrorNotification>
   );
 };
 

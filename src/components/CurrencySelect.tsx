@@ -1,35 +1,35 @@
 import type { CurrencySelectProps } from '../types/components';
-import { FormGroup, Label, LabelText, Select } from '../styles';
+import { Group, Label, LabelText, Select } from '../styles';
 import { getValidCurrencies, formatCurrencyDisplay } from '../utils/currency';
 
 export const CurrencySelect = ({
-  currencies,
-  value,
+  currencies: initialCurrencies,
+  value: selectedValue,
   onChange,
   label,
   id,
   disabled = false,
 }: CurrencySelectProps) => {
-  const isEmpty = currencies.length === 0;
+  const isEmpty = initialCurrencies.length === 0;
   const isDisabled = disabled || isEmpty;
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(e.target.value);
   };
 
-  const validCurrencies = getValidCurrencies(currencies);
+  const currencies = getValidCurrencies(initialCurrencies);
 
   return (
-    <FormGroup>
+    <Group>
       <Label htmlFor={id}>
         {label}
-        {currencies.length > 0 && (
+        {initialCurrencies.length > 0 && (
           <LabelText>({currencies.length} available)</LabelText>
         )}
       </Label>
       <Select
         id={id}
-        value={value}
+        value={selectedValue}
         onChange={handleChange}
         disabled={isDisabled}
         isEmpty={isEmpty}
@@ -37,13 +37,13 @@ export const CurrencySelect = ({
         <option value="">
           {isEmpty ? 'No currencies available' : 'Select currency'}
         </option>
-        {validCurrencies.map((currency) => (
+        {currencies.map((currency) => (
           <option key={currency.code} value={currency.code}>
             {formatCurrencyDisplay(currency)}
           </option>
         ))}
       </Select>
-    </FormGroup>
+    </Group>
   );
 };
 
